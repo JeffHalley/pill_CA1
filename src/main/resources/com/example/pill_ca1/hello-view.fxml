@@ -1,16 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
 
-<?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.pill_ca1.HelloController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pill_ca1.HelloController">
+    <children>
+        <BorderPane prefHeight="800.0" prefWidth="1000.0">
+            <top>
+                <MenuBar BorderPane.alignment="CENTER">
+                    <menus>
+                        <Menu mnemonicParsing="false" text="File">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#openFile" text="Open File" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Edit">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="Delete" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Help">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="About" />
+                            </items>
+                        </Menu>
+                    </menus>
+                </MenuBar>
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+            </top>
+            <left>
+                <ImageView fx:id="imageView1" fitHeight="400.0" fitWidth="400.0" onMouseClicked="#handleImageClick" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER" />
+            </left>
+            <right>
+                <ImageView fx:id="imageView2" fitHeight="400.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER" />
+            </right>
+         <bottom>
+            <Slider fx:id="thresholdSlider" max="0.3" maxHeight="-Infinity" maxWidth="-Infinity" onDragDetected="#updateImages" prefHeight="100.0" prefWidth="500.0" value="10.0" BorderPane.alignment="TOP_CENTER" />
+
+
+         </bottom>
+         <center>
+            <ColorPicker fx:id="colorPicker" minHeight="-Infinity" minWidth="-Infinity" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets bottom="500.0" />
+               </BorderPane.margin>
+            </ColorPicker>
+         </center>
+
+        </BorderPane>
+    </children>
+</AnchorPane>
